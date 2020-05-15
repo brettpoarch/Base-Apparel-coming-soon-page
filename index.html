@@ -30,7 +30,7 @@
     <h1>We're <strong>coming soon</strong></h1>
     <p>Hello fellow shoppers! We're currently building our new fashion store. 
     Add your email below to stay up-to-date with announcements and our launch deals.</p>
-    <form class="form-container">
+    <form class="form-container" novalidate>
       <input type="email" placeholder="Email Address"/>
       <img class="arrow" src="images/icon-arrow.svg" alt="">
     </form>
@@ -44,9 +44,30 @@
   </footer>
 </body>
 <script>
-  const arrow = document.querySelector('.arrow')
+  const arrow = document.querySelector('.arrow');
+  const inputBox = document.querySelector('input');
+  const form = document.querySelector('form');
+
+
   arrow.onclick = function() {
-    console.log(event)
+    const validEmail = event.target.previousElementSibling.validity.valid;
+    const img = document.createElement('div');
+    img.innerHTML = `<img class="error" src="images/icon-error.svg">`
+    
+
+    if (validEmail) {
+      form.submit();
+    } else {
+      
+      form.appendChild(img)
+    }
+  }
+  arrow.onmouseover = function() {
+    inputBox.style.border = '1px solid hsl(0, 93%, 68%)';
+  }
+
+  arrow.onmouseout = function() {
+    inputBox.style.border = '1px solid hsl(0, 36%, 70%)';
   }
 </script>
 </html>

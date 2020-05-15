@@ -5,26 +5,25 @@ body {
 	background-color: #707070;
 	line-height: 1.6;
 	color: hsl(0, 36%, 70%);
-	max-width: 375px;
+	max-width: 375px; /* add to container */
 
 }
 
 .container {
 	
 	margin: 0 auto;
-	background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%)); /*add background back to body*/
 }
 
 .logo {
-	width: 35%;
-	padding: 2em 1em;
-	margin: 0;
+	width: 30%;
+	padding: 2em 2em;
 }
 
 .main {
 	text-align: center;
 	margin-top: -1em;
-	padding: 4em 1em 3em;
+	padding: 4em 2em 3em;
 }
 
 
@@ -80,6 +79,15 @@ input:focus {
 	border: 1px solid hsl(0, 93%, 68%);
 }
 
+.error {
+	margin-left: -8em;
+	height: 1em;
+	padding-top: 10px;
+}
+
+.none {
+	display: none;
+}
 footer {
 	margin: 0;
 	padding: 1em;
