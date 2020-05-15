@@ -85,6 +85,12 @@ input:focus {
 	padding-top: 10px;
 }
 
+.error-text {
+	color: red;
+	margin: -5em 10em 0 0;
+	font-size: .75em;
+}
+
 .none {
 	display: none;
 }

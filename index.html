@@ -33,7 +33,9 @@
     <form class="form-container" novalidate>
       <input type="email" placeholder="Email Address"/>
       <img class="arrow" src="images/icon-arrow.svg" alt="">
+      <div class="error-message"></div>
     </form>
+    <p class="error-container none">Please provide a valid email</p>
   </div>
   
   <footer class="container">
@@ -46,21 +48,26 @@
 <script>
   const arrow = document.querySelector('.arrow');
   const inputBox = document.querySelector('input');
-  const form = document.querySelector('form');
+  
 
 
   arrow.onclick = function() {
     const validEmail = event.target.previousElementSibling.validity.valid;
-    const img = document.createElement('div');
-    img.innerHTML = `<img class="error" src="images/icon-error.svg">`
+    const error = document.querySelector('.error-message');
+    const form = document.querySelector('form')
+    const errorText = document.querySelector('.error-container');
+    
     
 
     if (validEmail) {
-      form.submit();
-    } else {
+      form.submit()
       
-      form.appendChild(img)
+    } else {
+      error.innerHTML = `<img class="error" src="images/icon-error.svg">`
+      errorText.classList.remove('none')
+      errorText.classList.add('error-text')
     }
+
   }
   arrow.onmouseover = function() {
     inputBox.style.border = '1px solid hsl(0, 93%, 68%)';
