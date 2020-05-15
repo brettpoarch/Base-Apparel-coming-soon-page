@@ -30,9 +30,9 @@
     <h1>We're <strong>coming soon</strong></h1>
     <p>Hello fellow shoppers! We're currently building our new fashion store. 
     Add your email below to stay up-to-date with announcements and our launch deals.</p>
-    <form>
-      <input type="email" placeholder="Email Address"/><button type="submit"></button>
-      
+    <form class="form-container">
+      <input type="email" placeholder="Email Address"/>
+      <img class="arrow" src="images/icon-arrow.svg" alt="">
     </form>
   </div>
   
@@ -43,4 +43,10 @@
     </p>
   </footer>
 </body>
+<script>
+  const arrow = document.querySelector('.arrow')
+  arrow.onclick = function() {
+    console.log('hello')
+  }
+</script>
 </html>
